@@ -17,17 +17,30 @@ export default function CityTours() {
         <div>
             <h1>City Tours</h1>
             <p>Explore the city with us!</p>
-            <ul>
+            <div className="city-tours-container">
+                {" "}
+                {/* Opret en container til dine ture */}
                 {cityTours.map((cityTour) => (
-                    <li key={cityTour.id}>
-                        <li>Name of tour: {cityTour.nameOfTour}</li>
-                        <li>Guide on tour: {cityTour.guide}</li>
-                        <li>Max number of guests on tour: {cityTour.capacity} people</li>
-                        <li>Distance: {cityTour.distanceOfTour} km.</li>
-                        <li>Price per person: {cityTour.price} Dkr.</li>
-                    </li>
+                    <div key={cityTour.id} className="city-tour-card">
+                        {" "}
+                        {/* Opret et kort for hver tur */}
+                        <h2>{cityTour.nameOfTour}</h2>
+                        <p>
+                            <strong>Guide:</strong> {cityTour.guide}
+                        </p>
+                        <p>
+                            <strong>Max number of guests:</strong> {cityTour.capacity}
+                        </p>
+                        <p>
+                            <strong>Distance:</strong> {cityTour.distanceOfTour} km.
+                        </p>
+                        <p>
+                            <strong>Price per person:</strong> {cityTour.price} Dkr.
+                        </p>
+                        <button>Book {cityTour.nameOfTour}</button>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
