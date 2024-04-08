@@ -16,6 +16,9 @@ export default function NavHeader() {
                 <li>
                     <NavLink to="/city-tours">City Tours</NavLink>
                 </li>
+                <li>
+                    <NavLink to="/tour-dates">Tour Dates</NavLink>
+                </li>
             </ul>
         </nav>
     );

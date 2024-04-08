@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import CityTours from "./pages/CityTours";
+import TourDates from "./pages/TourDates";
 
 export default function App() {
     return (
@@ -15,6 +16,7 @@ export default function App() {
                 <Route path="*" element={<h2>Not Found</h2>} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/city-tours" element={<CityTours />} />
+                <Route path="/tour-dates" element={<TourDates />} />
             </Routes>
         </Layout>
     );
