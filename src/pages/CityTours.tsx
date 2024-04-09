@@ -14,30 +14,30 @@ export default function CityTours() {
     }, []);
 
     return (
-        <div>
-            <h1>City Tours</h1>
-            <p>Explore the city with us!</p>
-            <div className="city-tours-container">
-                {" "}
-                {/* Opret en container til dine ture */}
+        <div className="container">
+            <h3 className="mb-4">City Tours</h3>
+            <p className="mb-4">Explore the city with us!</p>
+            <div className="row">
                 {cityTours.map((cityTour) => (
-                    <div key={cityTour.id} className="city-tour-card">
-                        {" "}
-                        {/* Opret et kort for hver tur */}
-                        <h2>{cityTour.nameOfTour}</h2>
-                        <p>
-                            <strong>Guide:</strong> {cityTour.guide}
-                        </p>
-                        <p>
-                            <strong>Max number of guests:</strong> {cityTour.capacity}
-                        </p>
-                        <p>
-                            <strong>Distance:</strong> {cityTour.distanceOfTour} km.
-                        </p>
-                        <p>
-                            <strong>Price per person:</strong> {cityTour.price} Dkr.
-                        </p>
-                        <button>Book {cityTour.nameOfTour}</button>
+                    <div key={cityTour.id} className="col-lg-4 col-md-6 mb-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <h2 className="card-title">{cityTour.nameOfTour}</h2>
+                                <p className="card-text">
+                                    <strong>Guide:</strong> {cityTour.guide}
+                                </p>
+                                <p className="card-text">
+                                    <strong>Max number of guests:</strong> {cityTour.capacity}
+                                </p>
+                                <p className="card-text">
+                                    <strong>Distance:</strong> {cityTour.distanceOfTour} km.
+                                </p>
+                                <p className="card-text">
+                                    <strong>Price per person:</strong> {cityTour.price} Dkr.
+                                </p>
+                                <button className="btn btn-primary">Book {cityTour.nameOfTour}</button>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

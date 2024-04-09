@@ -15,7 +15,7 @@ export default function TourDates() {
 
     return (
         <>
-            <h1>Tour Dates</h1>
+            <h3>Tour Dates</h3>
             <p>Book a tour with us!</p>
             <div className="row">
                 {tourDates.map((tourDate) => (
