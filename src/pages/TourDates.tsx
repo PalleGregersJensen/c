@@ -17,17 +17,21 @@ export default function TourDates() {
         <>
             <h1>Tour Dates</h1>
             <p>Book a tour with us!</p>
-            <div className="tour-dates-container">
+            <div className="row">
                 {tourDates.map((tourDate) => (
-                    <div key={tourDate.id} className="tour-date-card">
-                        <h2>{tourDate.cityTour.nameOfTour}</h2>
-                        <p>
-                            <strong>This tour takes place at: {tourDate.timeAndDate }</strong>
-                        </p>
-                        <p>
-                            <strong>Vacancies positions at this tour:</strong> {tourDate.capacity}
-                        </p>
-                        <button>Book this tour</button>
+                    <div key={tourDate.id} className="col-md-4 mb-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <h2 className="card-title">{tourDate.cityTour.nameOfTour}</h2>
+                                <p className="card-text">
+                                    <strong>This tour takes place at:</strong> {tourDate.timeAndDate}
+                                </p>
+                                <p className="card-text">
+                                    <strong>Vacant positions at this tour:</strong> {tourDate.capacity}
+                                </p>
+                                <button className="btn btn-primary">Book this tour</button>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
