@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { getAllCityTours } from "../rest-service/cityTours";
+import { useNavigate } from "react-router-dom";
 
 export default function CityTours() {
     const [cityTours, setCityTours] = useState([]);
+    const navigate = useNavigate(); // Hent navigationsfunktionen
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,6 +14,12 @@ export default function CityTours() {
 
         fetchData();
     }, []);
+
+    const handleBookTour = () => {
+        console.log("Book tour");
+        // Naviger til /tour-dates når der klikkes på knappen
+        navigate(`/tour-dates`);
+    };
 
     return (
         <div className="container">
@@ -35,7 +43,9 @@ export default function CityTours() {
                                 <p className="card-text">
                                     <strong>Price per person:</strong> {cityTour.price} Dkr.
                                 </p>
-                                <button className="btn btn-primary">Book {cityTour.nameOfTour}</button>
+                                <button className="btn btn-primary" onClick={() => handleBookTour()}>
+                                    Book {cityTour.nameOfTour}
+                                </button>
                             </div>
                         </div>
                     </div>
